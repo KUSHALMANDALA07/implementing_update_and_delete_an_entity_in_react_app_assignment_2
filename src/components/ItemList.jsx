@@ -1,14 +1,18 @@
 import Item from "./Item";
 
-const ItemList = ({ items }) => {
-    // your code here
-    return (
-        <>
-            {items.map((item) => (
-                <Item key={item.id} item={item} />
-            ))}
-        </>
-    );
+const ItemList = ({ items, onDelete, onEdit }) => {
+  return (
+    <div className="item-list">
+      {items.map((item) => (
+        <Item
+          key={item.id}
+          item={item}
+          onDelete={onDelete}
+          onEdit={onEdit}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default ItemList;
